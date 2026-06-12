@@ -22,6 +22,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "nvidia.NVreg_EnableGpuFirmware=0" "nvidia.NVreg_UseDPY=0" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,6 +58,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -67,6 +69,11 @@
 
   # Load nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Fix washed-out HDR colors on Nvidia - bypass KWin atomic modesetting
+  environment.sessionVariables = {
+    KWIN_DRM_NO_AMS = "1";
+  };
 
   hardware = {
   	# Enable graphics driver system
@@ -83,7 +90,7 @@
 	    powerManagement.enable = false;
 	    powerManagement.finegrained = false;
 
-	    open = true; # open-source kernel module
+	    open = true; # open-source kernel module (recommended for RTX 3060)
             nvidiaSettings = true;
 	    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
