@@ -13,7 +13,8 @@
 	docker
 	code-cursor
         proton-pass
-        proton-pass-cli    
+        proton-pass-cli 
+        opencode   
   ];
 
   # Basic Git configuration managed directly by Home Manager
