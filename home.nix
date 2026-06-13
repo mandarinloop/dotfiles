@@ -14,7 +14,8 @@
 	code-cursor
         proton-pass
         proton-pass-cli 
-        opencode   
+        opencode
+        python314Packages.uv   
   ];
 
   # Basic Git configuration managed directly by Home Manager

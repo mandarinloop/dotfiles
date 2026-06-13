@@ -145,6 +145,21 @@
   programs.firefox.enable = true;
   # Install GameMode
   programs.gamemode.enable = true;
+
+  # Let unpatched binaries (uv-managed Python, wheels) find a dynamic linker
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      openssl
+      libffi
+      glibc
+    ];
+  };
+
+  # Put ~/.local/bin on PATH for uv-installed tools
+  environment.localBinInPath = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -155,6 +170,7 @@
      wget
      htop
      fastfetch
+     uv
   ];
 
   programs.steam.enable = true;
