@@ -22,7 +22,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "nvidia.NVreg_EnableGpuFirmware=0" "nvidia.NVreg_UseDPY=0" ];
+  boot.kernelParams = [ "nvidia.NVreg_EnableGpuFirmware=0" "nvidia.NVreg_UseDPY=0" "nvidia.NVreg_RestrictProfilingToAdminUsers=0"];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
