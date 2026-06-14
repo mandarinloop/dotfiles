@@ -16,7 +16,8 @@
         proton-pass-cli 
         opencode
         python314Packages.uv
-        fastfetch   
+        fastfetch  
+        zip 
   ];
 
   # Basic Git configuration managed directly by Home Manager
