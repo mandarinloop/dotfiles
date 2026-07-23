@@ -40,6 +40,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      shell.program = "fish";
       font.size = 12;
       window.opacity = 0.95;
     };
