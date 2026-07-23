@@ -127,6 +127,21 @@
     #media-session.enable = true;
   };
 
+  # Prevent WirePlumber from auto-muting game audio streams (Dota 2, etc.)
+  environment.etc."wireplumber/main.lua.d/51-no-mute-game.lua".text = ''
+    rule = {
+      matches = {
+        {
+          { "media.role", "equals", "Game" },
+        },
+      },
+      apply_properties = {
+        ["node.mute"] = false,
+      },
+    }
+    table.insert(alsa_monitor.rules, rule)
+  '';
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

@@ -17,7 +17,8 @@
         opencode
         python314Packages.uv
         fastfetch  
-        zip 
+        zip
+        alacritty 
   ];
 
   # Basic Git configuration managed directly by Home Manager
