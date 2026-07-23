@@ -15,6 +15,7 @@
     experimental-features = ["nix-command" "flakes"];    
     substituters = [ "https://cache.nixos-cuda.org" ];
     trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+    auto-optimise-store = true;
   };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
