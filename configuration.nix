@@ -150,9 +150,9 @@
   users.users."hal9000" = {
     isNormalUser = true;
     description = "hal9000";
+    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     #  thunderbird
     ];
   };
@@ -182,13 +182,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim
-     wget
-     htop
-     fastfetch
-     uv
   ];
 
+  programs.fish.enable = true;
   programs.steam.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

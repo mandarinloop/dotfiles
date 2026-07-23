@@ -9,6 +9,9 @@
 
   # Packages to install
   home.packages = with pkgs; [
+	vim
+	wget
+	htop
 	gh
 	docker
 	code-cursor
@@ -18,7 +21,7 @@
         python314Packages.uv
         fastfetch  
         zip
-        alacritty 
+        neovim
   ];
 
   # Basic Git configuration managed directly by Home Manager
@@ -30,6 +33,19 @@
     };
   };
 
+  programs.fish = {
+    enable = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font.size = 12;
+      window.opacity = 0.95;
+    };
+  };
+
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 }
+
