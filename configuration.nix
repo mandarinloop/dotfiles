@@ -22,7 +22,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelParams = [ "nvidia.NVreg_EnableGpuFirmware=0" "nvidia.NVreg_UseDPY=0" "nvidia.NVreg_RestrictProfilingToAdminUsers=0"];
 
   networking.hostName = "nixos"; # Define your hostname.

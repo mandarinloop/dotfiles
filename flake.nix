@@ -38,6 +38,7 @@
 
 	      # imports to home.nix
               home-manager.extraSpecialArgs = { inherit inputs; }; 
+              home-manager.backupFileExtension = "hm-bak";
             }
           ];
         };
