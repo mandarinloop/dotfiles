@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "hal9000";
@@ -17,7 +17,7 @@
 	code-cursor
         proton-pass
         proton-pass-cli 
-        opencode
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         python314Packages.uv
         fastfetch  
         zip
