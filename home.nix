@@ -14,7 +14,7 @@
 	htop
 	gh
 	docker
-	code-cursor
+	vscode
         proton-pass
         proton-pass-cli 
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
